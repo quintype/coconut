@@ -10,9 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-//= require liquid
-//= require liquid_file_path
-//= require templates
+//= require quintype-liquid
 //= require_self
 
 var _ = require("lodash");
