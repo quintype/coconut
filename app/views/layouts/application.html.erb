@@ -7,8 +7,9 @@
   </head>
 
   <body>
+    <script type="text/javascript">var qtReady = qtReady || [];</script>
     <%= yield %>
-    <script type="text/javascript"><%= yield :javascript if content_for? :javascript %></script>
     <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">replaceQtReady()</script>
   </body>
 </html>

@@ -10,6 +10,22 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-var foobar = require("./foobar");
+//= require liquid
+//= require liquid_file_path
+//= require templates
+//= require_self
 
-console.log(foobar);
+var _ = require("lodash");
+
+window.replaceQtReady = function() {
+  var oldQtReady = window.qtReady;
+  window.qtReady = {
+    push: function(f) { f(); }
+  };
+  _.forEach(oldQtReady, function(f) {
+    try {
+      window.qtReady.push(f);
+    }
+    catch(e) {}
+  });
+}

@@ -1,0 +1,5 @@
+<% loader = TemplateLoader.new %>
+<% loader.paths.each do |path| %>
+  <% depend_on path %>
+<% end %>
+window.Templates = <%= loader.templates.to_json %>;

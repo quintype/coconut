@@ -7,7 +7,6 @@ group :assets do
   gem 'sass-rails', '~> 5.0'
   gem 'uglifier', '>= 1.3.0'
   gem 'therubyrhino'
-  gem 'browserify-rails'
 end
 
 group :development do
@@ -16,3 +15,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'liquid-rails'
+gem 'browserify-rails'
