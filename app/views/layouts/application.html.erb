@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coconut</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <script type="text/javascript"><%= yield :javascript if content_for? :javascript %></script>
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>
