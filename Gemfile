@@ -17,3 +17,6 @@ end
 
 gem 'browserify-rails'
 gem 'quintype-liquid', "~> 0.1.6"
+gem 'quintype-api', "~> 0.1.1"
+
+gem 'manticore', platform: :jruby

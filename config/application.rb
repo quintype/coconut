@@ -18,6 +18,7 @@ Bundler.require(*Rails.groups)
 
 module Coconut
   class Application < Rails::Application
+    config.publisher_config = config_for(:publisher_config)
     config.assets.prefix = "/coconut/assets"
   end
 end
