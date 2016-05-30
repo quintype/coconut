@@ -16,7 +16,8 @@ group :development do
 end
 
 gem 'browserify-rails'
-gem 'quintype-liquid', "~> 0.1.6"
-gem 'quintype-api', "~> 0.1.1"
+gem 'quintype-liquid', "~> 0.1.7"
+gem 'quintype-api', "~> 0.1.2"
+gem 'soft_evict_cache', "~> 0.1.2"
 
 gem 'manticore', platform: :jruby
