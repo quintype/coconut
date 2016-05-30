@@ -24,6 +24,19 @@ window.replaceQtReady = function() {
     try {
       window.qtReady.push(f);
     }
-    catch(e) {}
+    catch(e) {
+      console.error(e);
+    }
   });
 }
+
+window.app = {
+  previewStory: function(container) {
+    var template = quintypeLiquid.parse("{% include 'stories/story_body' %}")
+    window.addEventListener("message", function(event){
+      if(event.data["action"] != "reloadStory")
+	return;
+      container.innerHTML = template.render({story: event.data["story"], preview: true})
+    });
+  }
+};
