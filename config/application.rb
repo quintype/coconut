@@ -20,5 +20,6 @@ module Coconut
   class Application < Rails::Application
     config.publisher_config = config_for(:publisher_config)
     config.assets.prefix = "/coconut/assets"
+    config.quintype_routes.quintype_host = config.publisher_config["api_host"]
   end
 end
