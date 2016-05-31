@@ -11,6 +11,7 @@
 // about supported directives.
 
 //= require quintype-liquid
+//= require liquid_helper
 //= require_self
 
 var _ = require("lodash");

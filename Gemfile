@@ -16,7 +16,7 @@ group :development do
 end
 
 gem 'browserify-rails'
-gem 'quintype-liquid', "~> 0.1.7"
+gem 'quintype-liquid', "~> 0.1.8"
 gem 'quintype-api', "~> 0.1.2"
 gem "quintype-routes", "~> 0.1.0"
 gem 'soft_evict_cache', "~> 0.1.2"

@@ -8,7 +8,9 @@
 
   <body>
     <script type="text/javascript">var qtReady = qtReady || [];</script>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">replaceQtReady()</script>
   </body>
