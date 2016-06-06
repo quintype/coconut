@@ -24,9 +24,8 @@ WORKDIR /app
 RUN git log -n1 --pretty="Commit Date: %aD%nBuild Date: `date --rfc-2822`%n%h %an%n%s%n" > public/round-table.txt
 RUN bundle install --without development --deployment
 RUN npm install
-RUN bundle exec rake assets:precompile
+RUN EXECJS_RUNTIME=Node bundle exec rake assets:precompile
 
-ENTRYPOINT ["bundle"]
-CMD [ "exec" ,  "puma", "-t", "8:24"]
+CMD ["bundle", "exec" ,  "puma", "-t", "8:24"]
 
 # USAGE: docker run -d -i -t -p 3000:3000 quintype/coconut
