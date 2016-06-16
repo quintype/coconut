@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/:section/:year/:month/:day/:story_slug" => "stories#show"
   get "/preview/story" => "stories#preview"
+  get "/preview/home" => "home#preview"
 
   root to: "home#index"
 end

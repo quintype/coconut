@@ -39,6 +39,15 @@ window.app = {
 	return;
       container.innerHTML = template.render({story: event.data["story"], preview: true})
     });
+  },
+
+  previewHome: function(container) {
+    var template = quintypeLiquid.parse("{% include 'home/body' %}");
+    window.addEventListener("message", function(event){
+      if(event.data["action"] != "reloadStory")
+	return;
+      container.innerHTML = template.render({stories: Array(20).fill(event.data["story"]), preview: true})
+    });
   }
 };
 
