@@ -1,7 +1,7 @@
 development:
   secret_key_base: 524bfc83ece75c2f15efae497f9d868794d72fbc2f55412a7db8dcd4305f6ca8a2fffbb132fb9a212cccc3d5100f8d87d93489b0ba4d960338ec14cc5f45262a
-  api_host: <%= ENV["API_HOST"].presence || "http://localhost:8001" %>
-  cdn_image: <%= ENV["CDN_IMAGE"].presence || "qt-staging-01.imgix.net" %>
+  api_host: <%= ENV["API_HOST"].presence || "http://sketches.quintype.com" %>
+  cdn_image: <%= ENV["CDN_IMAGE"].presence || "quintype-01.imgix.net" %>
   asset_host: "http://localhost:3000"
   title: "Coconut"
   integrations:
