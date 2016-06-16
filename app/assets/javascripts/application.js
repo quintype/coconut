@@ -16,8 +16,8 @@
 
 var _ = require("lodash");
 
-window.replaceQtReady = function() {
-  var oldQtReady = window.qtReady;
+function replaceQtReady() {
+  var oldQtReady = window.qtReady || [];
   window.qtReady = {
     push: function(f) { f(); }
   };
@@ -41,3 +41,5 @@ window.app = {
     });
   }
 };
+
+replaceQtReady();

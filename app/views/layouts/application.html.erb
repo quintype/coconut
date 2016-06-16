@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coconut</title>
+    <title>Quintype Sample App</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
-
   <body>
     <script type="text/javascript">var qtReady = qtReady || [];</script>
-    <div class="container">
-      <%= yield %>
+    <div class="body-container">
+      <div class="layout-menu">
+	<ul>
+	  <% @config.menu_items.each do |menu_item| %>
+	    <li><a href="#"><%= menu_item.title %></a></li>
+	  <% end %>
+	</ul>
+      </div>
+      <div class="layout-content">
+	<div id="container">
+	  <%= yield %>
+	</div>
+      </div>
+      <div class="clear"></div>
     </div>
+    <script type="text/javascript">
+      var qtConfig = {
+        "image-cdn": "<%= @config.cdn_image %>"
+      };
+    </script>
     <%= javascript_include_tag 'application' %>
-    <script type="text/javascript">replaceQtReady()</script>
   </body>
 </html>
