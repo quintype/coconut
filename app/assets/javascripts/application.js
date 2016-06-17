@@ -33,7 +33,7 @@ function replaceQtReady() {
 
 window.app = {
   previewStory: function(container) {
-    var template = quintypeLiquid.parse("{% include 'stories/story_body' %}")
+    var template = quintypeLiquid.parse("{% include 'stories/body' %}")
     window.addEventListener("message", function(event){
       if(event.data["action"] != "reloadStory")
 	return;
