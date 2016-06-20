@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/codepodu/meta-tags.git
+  revision: 1d746c7c8a7ee3f4369508c4fdc8d38b382ca82c
+  branch: master
+  specs:
+    meta-tags (2.1.0)
+      actionpack (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,6 +100,7 @@ GEM
     quintype-routes (0.1.0)
       rack-reverse-proxy (~> 0.11.0)
       rails (>= 3.2)
+    quintype-seo (0.0.1)
     rack (2.0.0.rc1)
       json
     rack-proxy (0.6.0)
@@ -171,10 +180,12 @@ DEPENDENCIES
   browserify-rails
   listen
   manticore
+  meta-tags!
   puma (~> 3.0)
   quintype-api (~> 0.1.5)
   quintype-liquid (~> 0.1.8)
   quintype-routes (~> 0.1.0)
+  quintype-seo (~> 0.0.1)
   rails (>= 5.0.0.rc1, < 5.1)
   sass-rails (~> 5.0)
   soft_evict_cache (~> 0.1.3)
@@ -183,4 +194,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

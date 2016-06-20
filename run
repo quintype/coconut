@@ -1,0 +1,12 @@
+#! /bin/bash
+
+SERVER_ENV=$1
+: ${SERVER_ENV:=local}
+
+if [ "$SERVER_ENV" == "local" ]
+then
+   echo "In Local Environment"
+   bundle install
+   npm install
+   bundle exec puma
+fi

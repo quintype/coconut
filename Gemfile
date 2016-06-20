@@ -19,6 +19,8 @@ gem 'browserify-rails'
 gem 'quintype-liquid', "~> 0.1.8"
 gem 'quintype-api', "~> 0.1.5"
 gem "quintype-routes", "~> 0.1.0"
+gem 'quintype-seo', '~> 0.0.1'
+gem 'meta-tags', github: 'codepodu/meta-tags', branch: 'master'
 gem 'soft_evict_cache', "~> 0.1.3"
 
 gem 'manticore', platform: :jruby
