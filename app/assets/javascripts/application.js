@@ -12,6 +12,7 @@
 
 //= require quintype-liquid
 //= require liquid_helper
+//= require junk_remove_me
 //= require_self
 
 var _ = require("lodash");
