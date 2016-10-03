@@ -1,0 +1,9 @@
+<article class="story-page"
+         data-story-id="{{ story['id'] }}"
+         data-story-url="{{ story['canonical_url'] }}"
+         data-story-headline="{{ story['headline'] }}"
+         data-loader="story">
+
+  {% include 'story/cards' with story_cards: story['cards'] %}
+
+</article>
