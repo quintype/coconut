@@ -19,9 +19,11 @@
 
 var _ = require("lodash");
 var ImageGallery = require('image_gallery');
+var LocationOverlay = require('location_overlay');
 
 $(document).ready(function() {
   ImageGallery.init();
+  LocationOverlay.init();
 });
 
 function replaceQtReady() {
