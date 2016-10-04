@@ -12,10 +12,17 @@
 
 //= require quintype-liquid
 //= require liquid_helper
+//= require jquery-2.1.4
 //= require junk_remove_me
+//= require slick_min
 //= require_self
 
 var _ = require("lodash");
+var ImageGallery = require('image_gallery');
+
+$(document).ready(function() {
+  ImageGallery.init();
+});
 
 function replaceQtReady() {
   var oldQtReady = window.qtReady || [];
