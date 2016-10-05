@@ -13,6 +13,7 @@ end
 
 group :development do
   gem 'listen'
+  gem "pry"
 end
 
 gem 'browserify-rails'
