@@ -4,8 +4,8 @@
          data-story-headline="{{ story['headline'] }}"
          data-loader="story">
 
-  {% include 'story/header_card', story: story %}
-  {% include 'story/cards', story_cards: story['cards'] %}
-  {% include 'story/tags', story_tags: story['tags'] %}
+  {% include 'story/header_card' with story: story %}
+  {% include 'story/cards' with story_cards: story['cards'] %}
+  {% include 'story/tags' with story_tags: story['tags'] %}
   <div id="youtube-iframe-api"></div>
 </article>
