@@ -1,4 +1,4 @@
 <div class="card__element--jsembed
-    {% if story_element['subtype'] %} card__element--{{ story_element['subtype'] }} js-{{story_element['subtype']}} {% endif %}" >
-  {{ story_element['embed-js'] | base64_to_string }}
+    {% if story_element.subtype %} card__element--{{ story_element.subtype }} js-{{ story_element.subtype }} {% endif %}" >
+  {{ story_element.embed-js | base64_to_string }}
 </div>
