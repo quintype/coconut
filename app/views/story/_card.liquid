@@ -9,7 +9,7 @@
            data-card-version-id="{{ story_card['content-version-id'] }}"
            data-story-element-id="{{ story_element['id'] }}"
            data-story-element-type="{{ story_element['type'] }}" >
-        {% include file with story_element: story_element %}
+        {% include file, story_element: story_element %}
       </div>
     {% endif %}
   {% endfor %}
