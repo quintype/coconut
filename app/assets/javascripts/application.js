@@ -20,48 +20,12 @@
 var _ = require("lodash");
 var ImageGallery = require('image_gallery');
 var LocationOverlay = require('location_overlay');
-var YoutubeVideo = require('video');
-
+var YoutubeVideo = require('youtube_video');
+var Preview = require('story_preview');
 
 $(document).ready(function() {
   ImageGallery.init();
   LocationOverlay.init();
   YoutubeVideo.init();
+  Preview.init();
 });
-
-function replaceQtReady() {
-  var oldQtReady = window.qtReady || [];
-  window.qtReady = {
-    push: function(f) { f(); }
-  };
-  _.forEach(oldQtReady, function(f) {
-    try {
-      window.qtReady.push(f);
-    }
-    catch(e) {
-      console.error(e);
-    }
-  });
-}
-
-window.app = {
-  previewStory: function(container) {
-    var template = quintypeLiquid.parse("{% include 'stories/body' %}")
-    window.addEventListener("message", function(event){
-      if(event.data["action"] != "reloadStory")
-	return;
-      container.innerHTML = template.render({story: event.data["story"], preview: true})
-    });
-  },
-
-  previewHome: function(container) {
-    var template = quintypeLiquid.parse("{% include 'home/body' %}");
-    window.addEventListener("message", function(event){
-      if(event.data["action"] != "reloadStory")
-	return;
-      container.innerHTML = template.render({stories: Array(20).fill(event.data["story"]), preview: true})
-    });
-  }
-};
-
-replaceQtReady();

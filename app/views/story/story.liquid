@@ -5,6 +5,6 @@
          data-loader="story">
 
   {% include 'story/header_card' with story: story %}
-  {% include 'story/cards' with story_cards: story['cards'] %}
-  {% include 'story/tags' with story_tags: story['tags'] %}
+  {% include 'story/cards' with story_cards: story.cards %}
+  {% include 'story/tags' with story_tags: story.tags %}
 </article>

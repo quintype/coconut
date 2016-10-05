@@ -29,9 +29,12 @@
     </div>
     <script type="text/javascript">
       var qtConfig = {
-        "cdnImage": "<%= @config.cdn_image %>"
+        cdnImage           : "<%= @config.cdn_image %>",
+        storyElementMapping: <%= StoryElementMapping::TYPES.to_json.html_safe %>
       };
+
     </script>
     <%= javascript_include_tag 'application' %>
+
   </body>
 </html>

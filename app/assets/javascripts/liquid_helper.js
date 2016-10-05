@@ -9,5 +9,14 @@ Liquid.registerFilters({
     opts.fmt = 'pjpg'
     opts.auto = 'compress'
     return "//" + qtConfig.cdnImage + "/" + image.path(aspectRatio, opts);
+  },
+
+  partial_from_story_element: function(element) {
+    var mapping = window.qtConfig.storyElementMapping;
+    return mapping[element['subtype']] || mapping[element['type']]
+  },
+
+  base64_to_string: function(string) {
+    return atob(string);
   }
 });

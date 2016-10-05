@@ -4,6 +4,11 @@ SECTION_FORMAT = "/section/:section_slug"
 Rails.application.routes.draw do
   get "/ping" => "system#ping"
 
+  namespace :preview do
+    get "/story", action: "story"
+    get "/home", action: "home"
+  end
+
   get "/preview/story" => "story#preview"
   get "/preview/home" => "home#preview"
 
