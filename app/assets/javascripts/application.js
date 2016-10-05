@@ -20,10 +20,13 @@
 var _ = require("lodash");
 var ImageGallery = require('image_gallery');
 var LocationOverlay = require('location_overlay');
+var YoutubeVideo = require('video');
+
 
 $(document).ready(function() {
   ImageGallery.init();
   LocationOverlay.init();
+  YoutubeVideo.init();
 });
 
 function replaceQtReady() {

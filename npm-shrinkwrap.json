@@ -1008,6 +1008,21 @@
         }
       }
     },
+    "dom-events": {
+      "version": "0.1.1",
+      "from": "dom-events@>=0.1.1 <0.2.0",
+      "resolved": "https://registry.npmjs.org/dom-events/-/dom-events-0.1.1.tgz"
+    },
+    "element-class": {
+      "version": "0.2.2",
+      "from": "element-class@>=0.2.0 <0.3.0",
+      "resolved": "https://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz"
+    },
+    "lazy-youtube": {
+      "version": "2.2.0",
+      "from": "lazy-youtube@latest",
+      "resolved": "https://registry.npmjs.org/lazy-youtube/-/lazy-youtube-2.2.0.tgz"
+    },
     "lodash": {
       "version": "4.13.1",
       "from": "lodash@*",
@@ -1015,7 +1030,13 @@
     },
     "quintype-js": {
       "version": "0.1.3",
-      "from": "quintype-js@>=0.1.2 <0.2.0"
+      "from": "quintype-js@0.1.3",
+      "resolved": "https://registry.npmjs.org/quintype-js/-/quintype-js-0.1.3.tgz"
+    },
+    "synthetic-dom-events": {
+      "version": "0.1.1",
+      "from": "synthetic-dom-events@0.1.1",
+      "resolved": "https://registry.npmjs.org/synthetic-dom-events/-/synthetic-dom-events-0.1.1.tgz"
     }
   }
 }
