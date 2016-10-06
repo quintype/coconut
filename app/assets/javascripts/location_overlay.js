@@ -1,11 +1,15 @@
 LocationOverlay = {
   init: function() {
-    var $map = $('.js-location');
-    var $cover = $('<div class="google-map-cover"></div>');
-    $map.append($cover);
+    $(document).on('click', '.js-location', function() {
+      $(this).find('iframe').css('pointer-events', 'auto');
+    });
 
-    $cover.on('click', function () {
-      $cover.remove();
+    $(document).on('mouseenter', '.js-location', function() {
+      $(this).find('iframe').css('pointer-events', 'none');
+    });
+
+    $(document).on('mouseleave', '.js-location', function() {
+      $(this).find('iframe').css('pointer-events', 'none');
     });
   }
 }
