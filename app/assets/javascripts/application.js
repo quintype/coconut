@@ -13,7 +13,6 @@
 //= require quintype-liquid
 //= require liquid_helper
 //= require jquery-2.1.4
-//= require junk_remove_me
 //= require slick_min
 //= require_self
 
