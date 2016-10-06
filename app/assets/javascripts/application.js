@@ -20,7 +20,7 @@ var _ = require("lodash");
 var ImageGallery = require('image_gallery');
 var LocationOverlay = require('location_overlay');
 var YoutubeVideo = require('youtube_video');
-var Preview = require('story_preview');
+var Preview = require('preview');
 
 $(document).ready(function() {
   ImageGallery.init();

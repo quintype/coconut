@@ -9,13 +9,10 @@ Rails.application.routes.draw do
     get "/home", action: "home"
   end
 
-  get "/preview/story" => "story#preview"
-  get "/preview/home" => "home#preview"
-
   get "/search" => "home#search"
   get "/topic/:tag_name" => "home#tag"
 
   get SECTION_FORMAT => "home#section"
-  get STORY_FORMAT => "story#story"
+  get STORY_FORMAT => "story#index"
   root to: "home#index"
 end
