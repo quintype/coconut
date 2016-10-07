@@ -22,9 +22,18 @@ var LocationOverlay = require('location_overlay');
 var YoutubeVideo = require('youtube_video');
 var Preview = require('preview');
 
-$(document).ready(function() {
+function intializeApp() {
   ImageGallery.init();
   LocationOverlay.init();
   YoutubeVideo.init();
-  Preview.init();
+}
+
+$(document).ready(function() {
+  if (window.qtConfig.pageType === 'preview-story' || window.qtConfig.pageType === 'preview-home') {
+    Preview.init(intializeApp);
+    return;
+  }
+
+  intializeApp();
 });
+

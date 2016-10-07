@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @stories = Story.fetch("top")
+    @stories = Story.fetch("top", limit: 100)
   end
 
   def search

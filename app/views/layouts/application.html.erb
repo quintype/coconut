@@ -28,7 +28,7 @@
     <script type="text/javascript">
       var qtConfig = {
         cdnImage           : "<%= @config.cdn_image %>",
-        pageType           : "<%= @page.try([], 'type') %>",
+        pageType           : "<%= @page.try('[]', 'type') %>",
         storyElementMapping: <%= StoryElementMapping::TYPES.to_json.html_safe %>
       };
     </script>

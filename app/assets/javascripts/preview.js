@@ -12,16 +12,20 @@ function fillArray(value, len) {
 }
 
 Preview = {
-  init: function() {
-    if (window.qtConfig.pageType === 'preview-story') {
-      window.addEventListener('message', this.renderStoryPreviewPage);
-    } else if (window.qtConfig.pageType === 'preview-home') {
-      window.addEventListener('message', this.renderHomePreviewPage);
-    }
+  init: function(callback) {
+    window.addEventListener('message', function(event) {
+      var story = event.data['story'];
+
+      if (window.qtConfig.pageType === 'preview-story') {
+        this.renderStoryPreviewPage(story);
+      } else if (window.qtConfig.pageType === 'preview-home') {
+        this.renderHomePreviewPage(story);
+      }
+      callback();
+    }.bind(this));
   },
 
-  renderStoryPreviewPage: function(event) {
-    var story = event.data['story'];
+  renderStoryPreviewPage: function(story) {
     if(story) {
       var storyTemplate = quintypeLiquid.parse("{% include 'story/index' %}");
       var content = storyTemplate.render({
@@ -32,8 +36,7 @@ Preview = {
     }
   },
 
-  renderHomePreviewPage: function(event) {
-    var story = event.data['story'];
+  renderHomePreviewPage: function(story) {
     if (story) {
       var homeTemplate = quintypeLiquid.parse("{% include 'home/index' %}");
       var content = homeTemplate.render({
