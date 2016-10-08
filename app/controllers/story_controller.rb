@@ -10,7 +10,7 @@ class StoryController < ApplicationController
   private
     def get_authors
       return @story.authors if @story.authors
-      author = Author.get(@story.author_id.to_s)
+      author = Author.find(@story.author_id)
       if author.present?
         [author]
       else
