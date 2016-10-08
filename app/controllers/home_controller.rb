@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     build_stacks_request(request).execute!
     @top_stories = request.get_response("top")
     build_stacks(request)
-    @cache_keys = request.cache_keys(soft: "all") rescue []
+    @cache_keys = request.cache_keys(soft: "all", publisher_id: QtConfig.get.publisher_id) rescue nil
   end
 
   def search
