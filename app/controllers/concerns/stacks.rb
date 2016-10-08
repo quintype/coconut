@@ -5,7 +5,7 @@ module Stacks
     @config["layout"]["stacks"].each do |stack|
       request.add_request(stack["story-group"],
                           Story.bulk_stories_request(stack["story-group"])
-                               .add_params(fields: fields)
+                               .add_params(fields: "id,headline,slug,url,hero-image-s3-key,hero-image-metadata,first-published-at,last-published-at,alternative,published-at,author-name,author-id,sections,story-template,summary,metadata")
                                .add_params(limit: stack["max-stories"]))
     end
     request
@@ -17,10 +17,5 @@ module Stacks
       arr << { heading: stack["heading"], stories: stories }.stringify_keys if !stories.empty?
       arr
     end
-  end
-
-  def fields
-    "id,headline,slug,url,hero-image-s3-key,hero-image-metadata,first-published-at," +
-    "last-published-at,alternative,published-at,author-name,author-id,sections,story-template,summary,metadata"
   end
 end

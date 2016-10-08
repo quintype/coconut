@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     request = Quintype::API::Bulk.new
-    request.add_request("top", Story.bulk_stories_request("top").add_params(fields: fields))
+    request.add_request("top", Story.bulk_stories_request("top").add_params(fields: "id,headline,slug,url,hero-image-s3-key,hero-image-metadata,first-published-at,last-published-at,alternative,published-at,author-name,author-id,sections,story-template,summary,metadata"))
     build_stacks_request(request).execute!
     @top_stories = request.get_response("top")
     build_stacks(request)
