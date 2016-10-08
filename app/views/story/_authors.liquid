@@ -1,0 +1,7 @@
+{% if story_authors.size > 0 %}
+  <ul class="story__authors">
+    {% for author in story_authors %}
+      <li class="story__author__name">{{author.name}}</li>
+    {% endfor %}
+  </ul>
+{% endif %}

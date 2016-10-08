@@ -97,7 +97,11 @@ GEM
       slop (~> 3.4)
       spoon (~> 0.0)
     puma (3.4.0-java)
+<<<<<<< HEAD
     quintype-api (0.2.1)
+=======
+    quintype-api (0.1.6)
+>>>>>>> origin/stacks-and-author
       faraday (~> 0.9.2)
       faraday_middleware (~> 0.10.0)
     quintype-liquid (0.1.9)
@@ -192,7 +196,11 @@ DEPENDENCIES
   meta-tags!
   pry
   puma (~> 3.0)
+<<<<<<< HEAD
   quintype-api (~> 0.2.1)
+=======
+  quintype-api (~> 0.1.6)
+>>>>>>> origin/stacks-and-author
   quintype-liquid (~> 0.1.9)
   quintype-routes (~> 0.1.6)
   quintype-seo (~> 0.0.1)
