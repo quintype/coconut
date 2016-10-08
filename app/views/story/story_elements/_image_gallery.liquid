@@ -1,0 +1,15 @@
+{% if story_element.metadata.type == 'slideshow' %}
+  {% assign image_gallery_type='slideshow' %}
+{% else %}
+  {% assign image_gallery_type='image-gallery' %}
+{% endif %}
+<div class="card__element--{{ image_gallery_type }} {{ image_gallery_type }}">
+  <div class="js-image-gallery">
+    {% for image in story_element.story-elements %}
+      <div class="{{ image_gallery_type }}__image">
+        <img srcset="{{ image.image-s3-key | focusedImage: image.image-metadata, '16x9', 'w', 640 }}" />
+        <figcaption>{{ image.title }}</figcaption>
+      </div>
+    {% endfor %}
+  </div>
+</div>

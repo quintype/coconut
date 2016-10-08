@@ -1,0 +1,4 @@
+<div class="story-page__header">
+  <h1>{{ story.headline }}</h1>
+  <img src="{{ story.hero-image-s3-key | focusedImage: story.hero-image-metadata, '16x9', 'w', 640 }}" />
+</div>

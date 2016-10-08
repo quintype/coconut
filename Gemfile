@@ -13,10 +13,11 @@ end
 
 group :development do
   gem 'listen'
+  gem "pry"
 end
 
 gem 'browserify-rails'
-gem 'quintype-liquid', "~> 0.1.8"
+gem 'quintype-liquid', "~> 0.1.9"
 gem 'quintype-api', "~> 0.1.5"
 gem "quintype-routes", "~> 0.1.6"
 gem 'quintype-seo', '~> 0.0.1'

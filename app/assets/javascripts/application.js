@@ -12,44 +12,28 @@
 
 //= require quintype-liquid
 //= require liquid_helper
-//= require junk_remove_me
+//= require jquery-2.1.4
+//= require slick_min
 //= require_self
 
 var _ = require("lodash");
+var ImageGallery = require('image_gallery');
+var LocationOverlay = require('location_overlay');
+var YoutubeVideo = require('youtube_video');
+var Preview = require('preview');
 
-function replaceQtReady() {
-  var oldQtReady = window.qtReady || [];
-  window.qtReady = {
-    push: function(f) { f(); }
-  };
-  _.forEach(oldQtReady, function(f) {
-    try {
-      window.qtReady.push(f);
-    }
-    catch(e) {
-      console.error(e);
-    }
-  });
+function intializeApp() {
+  ImageGallery.init();
+  LocationOverlay.init();
+  YoutubeVideo.init();
 }
 
-window.app = {
-  previewStory: function(container) {
-    var template = quintypeLiquid.parse("{% include 'stories/body' %}")
-    window.addEventListener("message", function(event){
-      if(event.data["action"] != "reloadStory")
-	return;
-      container.innerHTML = template.render({story: event.data["story"], preview: true})
-    });
-  },
-
-  previewHome: function(container) {
-    var template = quintypeLiquid.parse("{% include 'home/body' %}");
-    window.addEventListener("message", function(event){
-      if(event.data["action"] != "reloadStory")
-	return;
-      container.innerHTML = template.render({stories: Array(20).fill(event.data["story"]), preview: true})
-    });
+$(document).ready(function() {
+  if (window.qtConfig.pageType === 'preview-story' || window.qtConfig.pageType === 'preview-home') {
+    Preview.init(intializeApp);
+    return;
   }
-};
 
-replaceQtReady();
+  intializeApp();
+});
+

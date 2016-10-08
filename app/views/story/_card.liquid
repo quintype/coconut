@@ -1,0 +1,16 @@
+<div class="story-page__card card">
+  {% for story_element in story_card.story-elements %}
+    {% assign file_type = story_element | partial_from_story_element %}
+    {% assign file = 'story/story_elements/' | append: file_type %}
+    {% if file_type %}
+      <div data-story-content-id="{{ story.id }}"
+           data-story-version-id="{{ story.story-version-id }}"
+           data-card-content-id="{{ story_card.id }}"
+           data-card-version-id="{{ story_card.content-version-id }}"
+           data-story-element-id="{{ story_element.id }}"
+           data-story-element-type="{{ story_element.type }}" >
+        {% include file, story_element: story_element %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
