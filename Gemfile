@@ -23,5 +23,6 @@ gem "quintype-routes", "~> 0.1.6"
 gem 'quintype-seo', '~> 0.0.1'
 gem 'meta-tags', github: 'codepodu/meta-tags', branch: 'master'
 gem 'soft_evict_cache', "~> 0.1.3"
+gem 'rack-delete_cookies_from_public_requests'
 
 gem 'manticore', platform: :jruby

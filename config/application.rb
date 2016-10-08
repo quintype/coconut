@@ -22,5 +22,6 @@ module Coconut
     config.assets.prefix = "/coconut/assets"
     config.quintype_routes.quintype_host = config.publisher_config["api_host"]
     config.assets.initialize_on_precompile = false
+    config.middleware.insert_before(ActionDispatch::Cookies, Rack::DeleteCookiesFromPublicRequests)
   end
 end
