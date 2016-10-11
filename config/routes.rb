@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/search" => "home#search"
   get "/topic/:tag_name" => "home#tag"
 
-  get SECTION_FORMAT => "home#section"
+  get SECTION_FORMAT => "section#index"
   get STORY_FORMAT => "story#index"
   root to: "home#index"
 end
